@@ -1,0 +1,691 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{DB4ECACF-EC8C-41C4-99E0-3B83C0FC8703}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>sisldll</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;SISLDLL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.\include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;SISLDLL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.\include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="include\sisl-copyright.h" />
+    <ClInclude Include="include\sisl.h" />
+    <ClInclude Include="include\sislP.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\construct.c" />
+    <ClCompile Include="src\crvarctang.c" />
+    <ClCompile Include="src\crvcrvtang.c" />
+    <ClCompile Include="src\crvlintang.c" />
+    <ClCompile Include="src\destruct.c" />
+    <ClCompile Include="src\evalcrvarc.c" />
+    <ClCompile Include="src\eval_2_crv.c" />
+    <ClCompile Include="src\ev_cv_off.c" />
+    <ClCompile Include="src\hp_s1880.c" />
+    <ClCompile Include="src\intjoinper.c" />
+    <ClCompile Include="src\make3D.c" />
+    <ClCompile Include="src\makecvkreg.c" />
+    <ClCompile Include="src\makesfkreg.c" />
+    <ClCompile Include="src\maketracks.c" />
+    <ClCompile Include="src\mk_cv_cycl.c" />
+    <ClCompile Include="src\newknots.c" />
+    <ClCompile Include="src\pickcrvsf.c" />
+    <ClCompile Include="src\pocrvtang.c" />
+    <ClCompile Include="src\refine_all.c" />
+    <ClCompile Include="src\s1001.c" />
+    <ClCompile Include="src\s1011.c" />
+    <ClCompile Include="src\s1012.c" />
+    <ClCompile Include="src\s1013.c" />
+    <ClCompile Include="src\s1014.c" />
+    <ClCompile Include="src\s1015.c" />
+    <ClCompile Include="src\s1016.c" />
+    <ClCompile Include="src\s1017.c" />
+    <ClCompile Include="src\s1018.c" />
+    <ClCompile Include="src\s1021.c" />
+    <ClCompile Include="src\s1022.c" />
+    <ClCompile Include="src\s1023.c" />
+    <ClCompile Include="src\s1024.c" />
+    <ClCompile Include="src\s1025.c" />
+    <ClCompile Include="src\s1119.c" />
+    <ClCompile Include="src\s1161.c" />
+    <ClCompile Include="src\s1162.c" />
+    <ClCompile Include="src\s1172.c" />
+    <ClCompile Include="src\s1173.c" />
+    <ClCompile Include="src\s1174.c" />
+    <ClCompile Include="src\s1190.c" />
+    <ClCompile Include="src\s1192.c" />
+    <ClCompile Include="src\s1219.c" />
+    <ClCompile Include="src\s1220.c" />
+    <ClCompile Include="src\s1221.c" />
+    <ClCompile Include="src\s1222.c" />
+    <ClCompile Include="src\s1223.c" />
+    <ClCompile Include="src\s1224.c" />
+    <ClCompile Include="src\s1225.c" />
+    <ClCompile Include="src\s1226.c" />
+    <ClCompile Include="src\s1227.c" />
+    <ClCompile Include="src\s1231.c" />
+    <ClCompile Include="src\s1232.c" />
+    <ClCompile Include="src\s1233.c" />
+    <ClCompile Include="src\s1235.c" />
+    <ClCompile Include="src\s1236.c" />
+    <ClCompile Include="src\s1237.c" />
+    <ClCompile Include="src\s1238.c" />
+    <ClCompile Include="src\s1239.c" />
+    <ClCompile Include="src\s1240.c" />
+    <ClCompile Include="src\s1241.c" />
+    <ClCompile Include="src\s1243.c" />
+    <ClCompile Include="src\s1244.c" />
+    <ClCompile Include="src\s1245.c" />
+    <ClCompile Include="src\s1251.c" />
+    <ClCompile Include="src\s1252.c" />
+    <ClCompile Include="src\s1301.c" />
+    <ClCompile Include="src\s1302.c" />
+    <ClCompile Include="src\s1303.c" />
+    <ClCompile Include="src\s1304.c" />
+    <ClCompile Include="src\s1305.c" />
+    <ClCompile Include="src\s1306.c" />
+    <ClCompile Include="src\s1307.c" />
+    <ClCompile Include="src\s1308.c" />
+    <ClCompile Include="src\s1309.c" />
+    <ClCompile Include="src\s1310.c" />
+    <ClCompile Include="src\s1311.c" />
+    <ClCompile Include="src\s1312.c" />
+    <ClCompile Include="src\s1313.c" />
+    <ClCompile Include="src\s1314.c" />
+    <ClCompile Include="src\s1315.c" />
+    <ClCompile Include="src\s1316.c" />
+    <ClCompile Include="src\s1317.c" />
+    <ClCompile Include="src\s1318.c" />
+    <ClCompile Include="src\s1319.c" />
+    <ClCompile Include="src\s1320.c" />
+    <ClCompile Include="src\s1321.c" />
+    <ClCompile Include="src\s1322.c" />
+    <ClCompile Include="src\s1323.c" />
+    <ClCompile Include="src\s1324.c" />
+    <ClCompile Include="src\s1325.c" />
+    <ClCompile Include="src\s1327.c" />
+    <ClCompile Include="src\s1328.c" />
+    <ClCompile Include="src\s1329.c" />
+    <ClCompile Include="src\s1330.c" />
+    <ClCompile Include="src\s1331.c" />
+    <ClCompile Include="src\s1332.c" />
+    <ClCompile Include="src\s1333.c" />
+    <ClCompile Include="src\s1333count.c" />
+    <ClCompile Include="src\s1333cycli.c" />
+    <ClCompile Include="src\s1334.c" />
+    <ClCompile Include="src\s1340.c" />
+    <ClCompile Include="src\s1341.c" />
+    <ClCompile Include="src\s1342.c" />
+    <ClCompile Include="src\s1343.c" />
+    <ClCompile Include="src\s1345.c" />
+    <ClCompile Include="src\s1346.c" />
+    <ClCompile Include="src\s1347.c" />
+    <ClCompile Include="src\s1348.c" />
+    <ClCompile Include="src\s1349.c" />
+    <ClCompile Include="src\s1350.c" />
+    <ClCompile Include="src\s1351.c" />
+    <ClCompile Include="src\s1352.c" />
+    <ClCompile Include="src\s1353.c" />
+    <ClCompile Include="src\s1354.c" />
+    <ClCompile Include="src\s1355.c" />
+    <ClCompile Include="src\s1356.c" />
+    <ClCompile Include="src\s1357.c" />
+    <ClCompile Include="src\s1358.c" />
+    <ClCompile Include="src\s1359.c" />
+    <ClCompile Include="src\s1360.c" />
+    <ClCompile Include="src\s1361.c" />
+    <ClCompile Include="src\s1362.c" />
+    <ClCompile Include="src\s1363.c" />
+    <ClCompile Include="src\s1364.c" />
+    <ClCompile Include="src\s1365.c" />
+    <ClCompile Include="src\s1366.c" />
+    <ClCompile Include="src\s1367.c" />
+    <ClCompile Include="src\s1369.c" />
+    <ClCompile Include="src\s1370.c" />
+    <ClCompile Include="src\s1371.c" />
+    <ClCompile Include="src\s1372.c" />
+    <ClCompile Include="src\s1373.c" />
+    <ClCompile Include="src\s1374.c" />
+    <ClCompile Include="src\s1375.c" />
+    <ClCompile Include="src\s1376.c" />
+    <ClCompile Include="src\s1377.c" />
+    <ClCompile Include="src\s1378.c" />
+    <ClCompile Include="src\s1379.c" />
+    <ClCompile Include="src\s1380.c" />
+    <ClCompile Include="src\s1381.c" />
+    <ClCompile Include="src\s1382.c" />
+    <ClCompile Include="src\s1383.c" />
+    <ClCompile Include="src\s1384.c" />
+    <ClCompile Include="src\s1385.c" />
+    <ClCompile Include="src\s1386.c" />
+    <ClCompile Include="src\s1387.c" />
+    <ClCompile Include="src\s1388.c" />
+    <ClCompile Include="src\s1389.c" />
+    <ClCompile Include="src\s1390.c" />
+    <ClCompile Include="src\s1391.c" />
+    <ClCompile Include="src\s1393.c" />
+    <ClCompile Include="src\s1399.c" />
+    <ClCompile Include="src\s1401.c" />
+    <ClCompile Include="src\s1421.c" />
+    <ClCompile Include="src\s1422.c" />
+    <ClCompile Include="src\s1424.c" />
+    <ClCompile Include="src\s1425.c" />
+    <ClCompile Include="src\s1435.c" />
+    <ClCompile Include="src\s1436.c" />
+    <ClCompile Include="src\s1437.c" />
+    <ClCompile Include="src\s1438.c" />
+    <ClCompile Include="src\s1439.c" />
+    <ClCompile Include="src\s1440.c" />
+    <ClCompile Include="src\s1450.c" />
+    <ClCompile Include="src\s1451.c" />
+    <ClCompile Include="src\s1452.c" />
+    <ClCompile Include="src\s1500.c" />
+    <ClCompile Include="src\s1501.c" />
+    <ClCompile Include="src\s1502.c" />
+    <ClCompile Include="src\s1503.c" />
+    <ClCompile Include="src\s1504.c" />
+    <ClCompile Include="src\s1505.c" />
+    <ClCompile Include="src\s1506.c" />
+    <ClCompile Include="src\s1507.c" />
+    <ClCompile Include="src\s1508.c" />
+    <ClCompile Include="src\s1510.c" />
+    <ClCompile Include="src\s1511.c" />
+    <ClCompile Include="src\s1512.c" />
+    <ClCompile Include="src\s1513.c" />
+    <ClCompile Include="src\s1514.c" />
+    <ClCompile Include="src\s1515.c" />
+    <ClCompile Include="src\s1516.c" />
+    <ClCompile Include="src\s1517.c" />
+    <ClCompile Include="src\s1518.c" />
+    <ClCompile Include="src\s1520.c" />
+    <ClCompile Include="src\s1521.c" />
+    <ClCompile Include="src\s1522.c" />
+    <ClCompile Include="src\s1528.c" />
+    <ClCompile Include="src\s1529.c" />
+    <ClCompile Include="src\s1530.c" />
+    <ClCompile Include="src\s1531.c" />
+    <ClCompile Include="src\s1534.c" />
+    <ClCompile Include="src\s1535.c" />
+    <ClCompile Include="src\s1536.c" />
+    <ClCompile Include="src\s1537.c" />
+    <ClCompile Include="src\s1538.c" />
+    <ClCompile Include="src\s1539.c" />
+    <ClCompile Include="src\s1540.c" />
+    <ClCompile Include="src\s1541.c" />
+    <ClCompile Include="src\s1542.c" />
+    <ClCompile Include="src\s1600.c" />
+    <ClCompile Include="src\s1601.c" />
+    <ClCompile Include="src\s1602.c" />
+    <ClCompile Include="src\s1603.c" />
+    <ClCompile Include="src\s1604.c" />
+    <ClCompile Include="src\s1605.c" />
+    <ClCompile Include="src\s1606.c" />
+    <ClCompile Include="src\s1607.c" />
+    <ClCompile Include="src\s1608.c" />
+    <ClCompile Include="src\s1609.c" />
+    <ClCompile Include="src\s1611.c" />
+    <ClCompile Include="src\s1612.c" />
+    <ClCompile Include="src\s1613.c" />
+    <ClCompile Include="src\s1613bez.c" />
+    <ClCompile Include="src\s1614.c" />
+    <ClCompile Include="src\s1615.c" />
+    <ClCompile Include="src\s1616.c" />
+    <ClCompile Include="src\s1617.c" />
+    <ClCompile Include="src\s1618.c" />
+    <ClCompile Include="src\s1619.c" />
+    <ClCompile Include="src\s1620.c" />
+    <ClCompile Include="src\s1630.c" />
+    <ClCompile Include="src\s1631.c" />
+    <ClCompile Include="src\s1700.c" />
+    <ClCompile Include="src\s1701.c" />
+    <ClCompile Include="src\s1705.c" />
+    <ClCompile Include="src\s1706.c" />
+    <ClCompile Include="src\s1707.c" />
+    <ClCompile Include="src\s1708.c" />
+    <ClCompile Include="src\s1710.c" />
+    <ClCompile Include="src\s1711.c" />
+    <ClCompile Include="src\s1712.c" />
+    <ClCompile Include="src\s1713.c" />
+    <ClCompile Include="src\s1714.c" />
+    <ClCompile Include="src\s1715.c" />
+    <ClCompile Include="src\s1716.c" />
+    <ClCompile Include="src\s1720.c" />
+    <ClCompile Include="src\s1730.c" />
+    <ClCompile Include="src\s1731.c" />
+    <ClCompile Include="src\s1732.c" />
+    <ClCompile Include="src\s1733.c" />
+    <ClCompile Include="src\s1741.c" />
+    <ClCompile Include="src\s1750.c" />
+    <ClCompile Include="src\s1753.c" />
+    <ClCompile Include="src\s1754.c" />
+    <ClCompile Include="src\s1755.c" />
+    <ClCompile Include="src\s1770.c" />
+    <ClCompile Include="src\s17702d.c" />
+    <ClCompile Include="src\s1771.c" />
+    <ClCompile Include="src\s1772.c" />
+    <ClCompile Include="src\s1773.c" />
+    <ClCompile Include="src\s1774.c" />
+    <ClCompile Include="src\s1775.c" />
+    <ClCompile Include="src\s1780.c" />
+    <ClCompile Include="src\s1785.c" />
+    <ClCompile Include="src\s1786.c" />
+    <ClCompile Include="src\s1787.c" />
+    <ClCompile Include="src\s1788.c" />
+    <ClCompile Include="src\s1789.c" />
+    <ClCompile Include="src\s1790.c" />
+    <ClCompile Include="src\s1791.c" />
+    <ClCompile Include="src\s1792.c" />
+    <ClCompile Include="src\s1795.c" />
+    <ClCompile Include="src\s1796.c" />
+    <ClCompile Include="src\s1797.c" />
+    <ClCompile Include="src\s1830.c" />
+    <ClCompile Include="src\s1834.c" />
+    <ClCompile Include="src\s1839.c" />
+    <ClCompile Include="src\s1840.c" />
+    <ClCompile Include="src\s1850.c" />
+    <ClCompile Include="src\s1851.c" />
+    <ClCompile Include="src\s1852.c" />
+    <ClCompile Include="src\s1853.c" />
+    <ClCompile Include="src\s1854.c" />
+    <ClCompile Include="src\s1855.c" />
+    <ClCompile Include="src\s1856.c" />
+    <ClCompile Include="src\s1857.c" />
+    <ClCompile Include="src\s1858.c" />
+    <ClCompile Include="src\s1859.c" />
+    <ClCompile Include="src\s1860.c" />
+    <ClCompile Include="src\s1870.c" />
+    <ClCompile Include="src\s1871.c" />
+    <ClCompile Include="src\s1880.c" />
+    <ClCompile Include="src\s1890.c" />
+    <ClCompile Include="src\s1891.c" />
+    <ClCompile Include="src\s1893.c" />
+    <ClCompile Include="src\s1894.c" />
+    <ClCompile Include="src\s1896.c" />
+    <ClCompile Include="src\s1897.c" />
+    <ClCompile Include="src\s1900.c" />
+    <ClCompile Include="src\s1901.c" />
+    <ClCompile Include="src\s1902.c" />
+    <ClCompile Include="src\s1903.c" />
+    <ClCompile Include="src\s1904.c" />
+    <ClCompile Include="src\s1905.c" />
+    <ClCompile Include="src\s1906.c" />
+    <ClCompile Include="src\s1907.c" />
+    <ClCompile Include="src\s1908.c" />
+    <ClCompile Include="src\s1909.c" />
+    <ClCompile Include="src\s1910.c" />
+    <ClCompile Include="src\s1911.c" />
+    <ClCompile Include="src\s1912.c" />
+    <ClCompile Include="src\s1916.c" />
+    <ClCompile Include="src\s1917.c" />
+    <ClCompile Include="src\s1918.c" />
+    <ClCompile Include="src\s1919.c" />
+    <ClCompile Include="src\s1920.c" />
+    <ClCompile Include="src\s1921.c" />
+    <ClCompile Include="src\s1924.c" />
+    <ClCompile Include="src\s1925.c" />
+    <ClCompile Include="src\s1926.c" />
+    <ClCompile Include="src\s1927.c" />
+    <ClCompile Include="src\s1930.c" />
+    <ClCompile Include="src\s1931.c" />
+    <ClCompile Include="src\s1931unit.c" />
+    <ClCompile Include="src\s1932.c" />
+    <ClCompile Include="src\s1933.c" />
+    <ClCompile Include="src\s1934.c" />
+    <ClCompile Include="src\s1935.c" />
+    <ClCompile Include="src\s1936.c" />
+    <ClCompile Include="src\s1937.c" />
+    <ClCompile Include="src\s1938.c" />
+    <ClCompile Include="src\s1940.c" />
+    <ClCompile Include="src\s1941.c" />
+    <ClCompile Include="src\s1942.c" />
+    <ClCompile Include="src\s1943.c" />
+    <ClCompile Include="src\s1944.c" />
+    <ClCompile Include="src\s1945.c" />
+    <ClCompile Include="src\s1946.c" />
+    <ClCompile Include="src\s1947.c" />
+    <ClCompile Include="src\s1948.c" />
+    <ClCompile Include="src\s1949.c" />
+    <ClCompile Include="src\s1950.c" />
+    <ClCompile Include="src\s1951.c" />
+    <ClCompile Include="src\s1953.c" />
+    <ClCompile Include="src\s1954.c" />
+    <ClCompile Include="src\s1955.c" />
+    <ClCompile Include="src\s1956.c" />
+    <ClCompile Include="src\s1957.c" />
+    <ClCompile Include="src\s1958.c" />
+    <ClCompile Include="src\s1959.c" />
+    <ClCompile Include="src\s1960.c" />
+    <ClCompile Include="src\s1961.c" />
+    <ClCompile Include="src\s1962.c" />
+    <ClCompile Include="src\s1963.c" />
+    <ClCompile Include="src\s1965.c" />
+    <ClCompile Include="src\s1966.c" />
+    <ClCompile Include="src\s1967.c" />
+    <ClCompile Include="src\s1968.c" />
+    <ClCompile Include="src\s1986.c" />
+    <ClCompile Include="src\s1987.c" />
+    <ClCompile Include="src\s1988.c" />
+    <ClCompile Include="src\s1989.c" />
+    <ClCompile Include="src\s1990.c" />
+    <ClCompile Include="src\s1991.c" />
+    <ClCompile Include="src\s1992.c" />
+    <ClCompile Include="src\s1993.c" />
+    <ClCompile Include="src\s1994.c" />
+    <ClCompile Include="src\s2500.c" />
+    <ClCompile Include="src\s2501.c" />
+    <ClCompile Include="src\s2502.c" />
+    <ClCompile Include="src\s2503.c" />
+    <ClCompile Include="src\s2504.c" />
+    <ClCompile Include="src\s2505.c" />
+    <ClCompile Include="src\s2506.c" />
+    <ClCompile Include="src\s2507.c" />
+    <ClCompile Include="src\s2508.c" />
+    <ClCompile Include="src\s2509.c" />
+    <ClCompile Include="src\s2510.c" />
+    <ClCompile Include="src\s2511.c" />
+    <ClCompile Include="src\s2512.c" />
+    <ClCompile Include="src\s2513.c" />
+    <ClCompile Include="src\s2514.c" />
+    <ClCompile Include="src\s2515.c" />
+    <ClCompile Include="src\s2516.c" />
+    <ClCompile Include="src\s2532.c" />
+    <ClCompile Include="src\s2533.c" />
+    <ClCompile Include="src\s2534.c" />
+    <ClCompile Include="src\s2535.c" />
+    <ClCompile Include="src\s2536.c" />
+    <ClCompile Include="src\s2540.c" />
+    <ClCompile Include="src\s2541.c" />
+    <ClCompile Include="src\s2542.c" />
+    <ClCompile Include="src\s2543.c" />
+    <ClCompile Include="src\s2544.c" />
+    <ClCompile Include="src\s2545.c" />
+    <ClCompile Include="src\s2550.c" />
+    <ClCompile Include="src\s2551.c" />
+    <ClCompile Include="src\s2553.c" />
+    <ClCompile Include="src\s2554.c" />
+    <ClCompile Include="src\s2555.c" />
+    <ClCompile Include="src\s2556.c" />
+    <ClCompile Include="src\s2557.c" />
+    <ClCompile Include="src\s2558.c" />
+    <ClCompile Include="src\s2559.c" />
+    <ClCompile Include="src\s2560.c" />
+    <ClCompile Include="src\s2561.c" />
+    <ClCompile Include="src\s2562.c" />
+    <ClCompile Include="src\s6addcurve.c" />
+    <ClCompile Include="src\s6affdist.c" />
+    <ClCompile Include="src\s6ang.c" />
+    <ClCompile Include="src\s6angle.c" />
+    <ClCompile Include="src\s6castelja.c" />
+    <ClCompile Include="src\s6chpar.c" />
+    <ClCompile Include="src\s6crss.c" />
+    <ClCompile Include="src\s6crvature.c" />
+    <ClCompile Include="src\s6crvcheck.c" />
+    <ClCompile Include="src\s6curvrad.c" />
+    <ClCompile Include="src\s6decomp.c" />
+    <ClCompile Include="src\s6degnorm.c" />
+    <ClCompile Include="src\s6dertopt.c" />
+    <ClCompile Include="src\s6diff.c" />
+    <ClCompile Include="src\s6dist.c" />
+    <ClCompile Include="src\s6dline.c" />
+    <ClCompile Include="src\s6dplane.c" />
+    <ClCompile Include="src\s6drawseq.c" />
+    <ClCompile Include="src\s6equal.c" />
+    <ClCompile Include="src\s6err.c" />
+    <ClCompile Include="src\s6existbox.c" />
+    <ClCompile Include="src\s6findfac.c" />
+    <ClCompile Include="src\s6fndintv.c" />
+    <ClCompile Include="src\s6herm.c" />
+    <ClCompile Include="src\s6herm_bez.c" />
+    <ClCompile Include="src\s6idcon.c" />
+    <ClCompile Include="src\s6idcpt.c" />
+    <ClCompile Include="src\s6idedg.c" />
+    <ClCompile Include="src\s6identify.c" />
+    <ClCompile Include="src\s6idget.c" />
+    <ClCompile Include="src\s6idint.c" />
+    <ClCompile Include="src\s6idklist.c" />
+    <ClCompile Include="src\s6idkpt.c" />
+    <ClCompile Include="src\s6idlis.c" />
+    <ClCompile Include="src\s6idnpt.c" />
+    <ClCompile Include="src\s6idput.c" />
+    <ClCompile Include="src\s6inv4.c" />
+    <ClCompile Include="src\s6invert.c" />
+    <ClCompile Include="src\s6knotmult.c" />
+    <ClCompile Include="src\s6length.c" />
+    <ClCompile Include="src\s6line.c" />
+    <ClCompile Include="src\s6lprj.c" />
+    <ClCompile Include="src\s6lufacp.c" />
+    <ClCompile Include="src\s6lusolp.c" />
+    <ClCompile Include="src\s6metric.c" />
+    <ClCompile Include="src\s6move.c" />
+    <ClCompile Include="src\s6mulvec.c" />
+    <ClCompile Include="src\s6mvec.c" />
+    <ClCompile Include="src\s6newbox.c" />
+    <ClCompile Include="src\s6norm.c" />
+    <ClCompile Include="src\s6ratder.c" />
+    <ClCompile Include="src\s6rotax.c" />
+    <ClCompile Include="src\s6rotmat.c" />
+    <ClCompile Include="src\s6schoen.c" />
+    <ClCompile Include="src\s6scpr.c" />
+    <ClCompile Include="src\s6sortpar.c" />
+    <ClCompile Include="src\s6sratder.c" />
+    <ClCompile Include="src\s6strider.c" />
+    <ClCompile Include="src\s6takunion.c" />
+    <ClCompile Include="src\s6twonorm.c" />
+    <ClCompile Include="src\s9adsimp.c" />
+    <ClCompile Include="src\s9adstep.c" />
+    <ClCompile Include="src\s9boundimp.c" />
+    <ClCompile Include="src\s9boundit.c" />
+    <ClCompile Include="src\s9clipimp.c" />
+    <ClCompile Include="src\s9clipit.c" />
+    <ClCompile Include="src\s9conmarch.c" />
+    <ClCompile Include="src\s9iterate.c" />
+    <ClCompile Include="src\s9iterimp.c" />
+    <ClCompile Include="src\s9smplknot.c" />
+    <ClCompile Include="src\s9surmarch.c" />
+    <ClCompile Include="src\sh1260.c" />
+    <ClCompile Include="src\sh1261.c" />
+    <ClCompile Include="src\sh1262.c" />
+    <ClCompile Include="src\sh1263.c" />
+    <ClCompile Include="src\sh1365.c" />
+    <ClCompile Include="src\sh1369.c" />
+    <ClCompile Include="src\sh1371.c" />
+    <ClCompile Include="src\sh1372.c" />
+    <ClCompile Include="src\sh1373.c" />
+    <ClCompile Include="src\sh1374.c" />
+    <ClCompile Include="src\sh1375.c" />
+    <ClCompile Include="src\sh1460.c" />
+    <ClCompile Include="src\sh1461.c" />
+    <ClCompile Include="src\sh1462.c" />
+    <ClCompile Include="src\sh1463.c" />
+    <ClCompile Include="src\sh1464.c" />
+    <ClCompile Include="src\sh1465.c" />
+    <ClCompile Include="src\sh1466.c" />
+    <ClCompile Include="src\sh1467.c" />
+    <ClCompile Include="src\sh1502.c" />
+    <ClCompile Include="src\sh1503.c" />
+    <ClCompile Include="src\sh1510.c" />
+    <ClCompile Include="src\sh1511.c" />
+    <ClCompile Include="src\sh1761.c" />
+    <ClCompile Include="src\sh1762.c" />
+    <ClCompile Include="src\sh1779.c" />
+    <ClCompile Include="src\sh1779_at.c" />
+    <ClCompile Include="src\sh1780.c" />
+    <ClCompile Include="src\sh1780_at.c" />
+    <ClCompile Include="src\sh1781.c" />
+    <ClCompile Include="src\sh1781_at.c" />
+    <ClCompile Include="src\sh1782.c" />
+    <ClCompile Include="src\sh1783.c" />
+    <ClCompile Include="src\sh1784.c" />
+    <ClCompile Include="src\sh1786.c" />
+    <ClCompile Include="src\sh1787.c" />
+    <ClCompile Include="src\sh1790.c" />
+    <ClCompile Include="src\sh1830.c" />
+    <ClCompile Include="src\sh1831.c" />
+    <ClCompile Include="src\sh1834.c" />
+    <ClCompile Include="src\sh1839.c" />
+    <ClCompile Include="src\sh1850.c" />
+    <ClCompile Include="src\sh1851.c" />
+    <ClCompile Include="src\sh1852.c" />
+    <ClCompile Include="src\sh1853.c" />
+    <ClCompile Include="src\sh1854.c" />
+    <ClCompile Include="src\sh1855.c" />
+    <ClCompile Include="src\sh1856.c" />
+    <ClCompile Include="src\sh1857.c" />
+    <ClCompile Include="src\sh1858.c" />
+    <ClCompile Include="src\sh1859.c" />
+    <ClCompile Include="src\sh1860.c" />
+    <ClCompile Include="src\sh1870.c" />
+    <ClCompile Include="src\sh1871.c" />
+    <ClCompile Include="src\sh1922.c" />
+    <ClCompile Include="src\sh1923.c" />
+    <ClCompile Include="src\sh1924.c" />
+    <ClCompile Include="src\sh1925.c" />
+    <ClCompile Include="src\sh1926.c" />
+    <ClCompile Include="src\sh1927.c" />
+    <ClCompile Include="src\sh1928.c" />
+    <ClCompile Include="src\sh1929.c" />
+    <ClCompile Include="src\sh1930.c" />
+    <ClCompile Include="src\sh1992.c" />
+    <ClCompile Include="src\sh1993.c" />
+    <ClCompile Include="src\sh1994.c" />
+    <ClCompile Include="src\sh6clvert.c" />
+    <ClCompile Include="src\sh6comedg.c" />
+    <ClCompile Include="src\sh6connect.c" />
+    <ClCompile Include="src\sh6count.c" />
+    <ClCompile Include="src\sh6cvvert.c" />
+    <ClCompile Include="src\sh6degen.c" />
+    <ClCompile Include="src\sh6disconn.c" />
+    <ClCompile Include="src\sh6edgpnt.c" />
+    <ClCompile Include="src\sh6edgred.c" />
+    <ClCompile Include="src\sh6evalint.c" />
+    <ClCompile Include="src\sh6floop.c" />
+    <ClCompile Include="src\sh6fndsplt.c" />
+    <ClCompile Include="src\sh6getgeom.c" />
+    <ClCompile Include="src\sh6getlist.c" />
+    <ClCompile Include="src\sh6getmain.c" />
+    <ClCompile Include="src\sh6getnbrs.c" />
+    <ClCompile Include="src\sh6getnext.c" />
+    <ClCompile Include="src\sh6getothr.c" />
+    <ClCompile Include="src\sh6getprev.c" />
+    <ClCompile Include="src\sh6gettop.c" />
+    <ClCompile Include="src\sh6idaledg.c" />
+    <ClCompile Include="src\sh6idcon.c" />
+    <ClCompile Include="src\sh6idfcros.c" />
+    <ClCompile Include="src\sh6idget.c" />
+    <ClCompile Include="src\sh6idkpt.c" />
+    <ClCompile Include="src\sh6idlis.c" />
+    <ClCompile Include="src\sh6idnpt.c" />
+    <ClCompile Include="src\sh6idnwun.c" />
+    <ClCompile Include="src\sh6idput.c" />
+    <ClCompile Include="src\sh6idrcros.c" />
+    <ClCompile Include="src\sh6idsplit.c" />
+    <ClCompile Include="src\sh6idunite.c" />
+    <ClCompile Include="src\sh6insert.c" />
+    <ClCompile Include="src\sh6inspnt.c" />
+    <ClCompile Include="src\sh6iscnect.c" />
+    <ClCompile Include="src\sh6ishelp.c" />
+    <ClCompile Include="src\sh6isinsid.c" />
+    <ClCompile Include="src\sh6ismain.c" />
+    <ClCompile Include="src\sh6nmbhelp.c" />
+    <ClCompile Include="src\sh6nmbmain.c" />
+    <ClCompile Include="src\sh6ptobj.c" />
+    <ClCompile Include="src\sh6ptouchp.c" />
+    <ClCompile Include="src\sh6putsing.c" />
+    <ClCompile Include="src\sh6red.c" />
+    <ClCompile Include="src\sh6remcon.c" />
+    <ClCompile Include="src\sh6rempnt.c" />
+    <ClCompile Include="src\sh6sepcrv.c" />
+    <ClCompile Include="src\sh6setcnsd.c" />
+    <ClCompile Include="src\sh6setdir.c" />
+    <ClCompile Include="src\sh6settop.c" />
+    <ClCompile Include="src\sh6spltgeo.c" />
+    <ClCompile Include="src\sh6tohelp.c" />
+    <ClCompile Include="src\sh6tomain.c" />
+    <ClCompile Include="src\sh6topohlp.c" />
+    <ClCompile Include="src\sh6trmlist.c" />
+    <ClCompile Include="src\shape.c" />
+    <ClCompile Include="src\shcheckput.c" />
+    <ClCompile Include="src\shchecktyp.c" />
+    <ClCompile Include="src\shcsfsing.c" />
+    <ClCompile Include="src\shdivsurf.c" />
+    <ClCompile Include="src\shevalc.c" />
+    <ClCompile Include="src\shmkhlppts.c" />
+    <ClCompile Include="src\shsing.c" />
+    <ClCompile Include="src\sh_1d_div.c" />
+    <ClCompile Include="src\sh_div_crv.c" />
+    <ClCompile Include="src\sh_set_at.c" />
+    <ClCompile Include="src\spli_silh.c" />
+    <ClCompile Include="src\tstcyclknt.c" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
